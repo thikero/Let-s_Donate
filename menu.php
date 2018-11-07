@@ -16,6 +16,8 @@
 <!--icons-css-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="css/w3css.css">
+<link href="css/hovers.css" rel="stylesheet" media="all">
+<link href="css/demo-page.css" rel="stylesheet" media="all">
 
 
 <!--static chart-->
