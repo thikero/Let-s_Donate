@@ -10,84 +10,37 @@
 <div class="row" style="position: relative;">
 <!--get data from database-->
 <?php
-$query="select charity_id,charity_name,charity_photo from charity";
+//$query="select charity_id,charity_name,charity_photo from charity";
+$query="select * from test";
 $charity_data=mysqli_query($connect,$query);
 
-//row--sizeof(charity_data)
-while ($rows=mysql_fetch_assoc($charity_data)) {
+//rows
+$row_amount=mysqli_num_rows($charity_data);
+for($num=0;$num<$row_amount;$num++) {
     
+    //columns
     for($column=0;$column<4;$column++)
     {
+      if(!$result=mysqli_fetch_assoc($charity_data))
+        {
+         break;
+        }
       echo'
-      <a href="charitiesinfo.php">
+      <a href="charitiesinfo.php"?charity_id='.$result["id"]/*$result["charity_id"]*/.'>
         <div class="col-md-3" style="border-radius: 10px;box-shadow: 10px">
           <div class="polaroid">
-            <img src="images/climate.jpg" style="width:100%;" class="shadow-lg p-3 mb-5 bg-white rounded">
-              <h4>'.$column.'</h4>
+            <img src="images/climate.jpg"'./*$result["charity_photo"]*/.' style="width:100%;" class="shadow-lg p-3 mb-5 bg-white rounded">
+              <h4>'.$column.$result['name']/*$result['charity_name']*/.'</h4>
           </div>
         </div>
-      </a>';
+      </a>
+      ';
     }
-    
-    $row=$row+4;
 }
 
 ?>
 
 <div>
-<!--<div class="row" style="position: relative;">
-<a href="charitiesinfo.php">
-  <div class="col-md-3" style="border-radius: 10px;box-shadow: 10px">
-  <div class="polaroid">
-  <img src="images/climate.jpg" style="width:100%;" class="shadow-lg p-3 mb-5 bg-white rounded">
-        <h4>Donation Team 1Donation Team 1Donation Team 1Donation Team 1Donation Team 1</h4>
-        </div>
-  </div>
-</a>
-<a href="charitiesinfo.php">
-  <div class="col-md-3">
-  <div class="polaroid">
-  <img src="images/climate.jpg" style="width: 100%">
-        <h4>Donation Team 2</h4>
-  </div>
-  </div>
- </a>
-<a href="charitiesinfo.php">
-  <div class="col-md-3 w3-hover-shadow w3-hover-shadow">
-  <div class="polaroid">
-  <img src="images/climate.jpg" style="width: 100%">
-        <h4>Donation Team 2</h4>
-  </div>
-  </div>
- </a><a href="charitiesinfo.php">
-  <div class="col-md-3 w3-hover-shadow w3-hover-shadow">
-  <div class="polaroid">
-  <img src="images/climate.jpg" style="width: 100%">
-        <h4>Donation Team 2</h4>
-  </div>
-  </div>
-
- </a>
- </div>
- <div class="row" style="position: relative;">
- <a href="charitiesinfo.php">
-  <div class="col-md-3 w3-hover-shadow w3-hover-shadow">
-  <div class="polaroid">
-  <img src="images/climate.jpg" style="width: 100%">
-        <h4>Donation Team 2</h4>
-  </div>
-  </div>
- </a><a href="charitiesinfo.php">
-  <div class="col-md-3 w3-hover-shadow w3-hover-shadow">
-  <div class="polaroid">
-  <img src="images/climate.jpg" style="width: 100%">
-        <h4>Donation Team 2</h4>
-  </div>
-  </div>
- </a>
-
-</div>
--->
 </div>
 </div>
 <!--inner block end here-->

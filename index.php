@@ -62,15 +62,17 @@ catch(Exception $e)
 {
 	echo $e;
 }
-
+$charity=mysqli_fetch_assoc($charity_name);
 ?>
+
 <h3 style="margin: 20px;">Charities</h3>
 <div class="row" style="position: relative;">
   <div class="col-md-4 w3-hover-shadow">
-  <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;">
+  <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;"><!--<?php/*echo $charity["photo"]*/ ?>-->
         <h4>
         	<?php
-        		echo $charity_name[0];
+        		
+        		echo $name["charity_name"];
         	?>
         </h4>
   </div>
@@ -79,7 +81,8 @@ catch(Exception $e)
   <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;">
         <h4>
         	<?php
-        		echo $charity_name[1];
+        		$charity=mysqli_fetch_assoc($charity_name);
+        		echo $name["charity_name"];
         	?>
         </h4>
   </div>
@@ -88,7 +91,8 @@ catch(Exception $e)
   <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;">
         <h4>
         	<?php
-        		echo $charity_name[2];
+        		$charity=mysqli_fetch_assoc($charity_name);
+        		echo $name["charity_name"];
         	?>
         </h4>
   </div>
