@@ -1,17 +1,4 @@
-/*!
- * Hover.css (http://ianlunn.github.io/Hover/)
- * Version: 2.0.2
- * Author: Ian Lunn @IanLunn
- * Author URL: http://ianlunn.co.uk/
- * Github: https://github.com/IanLunn/Hover
 
- * Made available under a MIT License:
- * http://www.opensource.org/licenses/mit-license.php
-
- * Hover.css Copyright Ian Lunn 2014. Generated with Sass.
- */
-/* 2D TRANSITIONS */
-/* Grow */
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;
@@ -3990,6 +3977,7 @@
 /* Icon Bounce */
 .hvr-icon-bounce {
   display: inline-block;
+  width: 50%;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -3998,14 +3986,14 @@
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  padding-right: 2.2em;
+  padding-right: 2em;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 .hvr-icon-bounce:before {
-  content: "\f087";
+  content: "\f055";
   position: absolute;
-  right: 1em;
+  right: 0.5em;
   padding: 0 1px;
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
