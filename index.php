@@ -65,10 +65,13 @@ catch(Exception $e)
 $charity=mysqli_fetch_assoc($charity_name);
 ?>
 
-<h3 style="margin: 20px;">Charities</h3>
+<h3 style="margin: 20px;color:#FC8213 ">Charities</h3>
+
 <div class="row" style="position: relative;">
-  <div class="col-md-4 w3-hover-shadow">
-  <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;"><!--<?php/*echo $charity["photo"]*/ ?>-->
+<a href="charitiesinfo.php">
+  <div class="col-md-3">
+  <div class="polaroid">
+  <img src="images/climate.jpg" style="width:100%;"><!--<?php/*echo $charity["photo"]*/ ?>-->
         <h4>
         	<?php
         		
@@ -76,9 +79,13 @@ $charity=mysqli_fetch_assoc($charity_name);
         	?>
         </h4>
   </div>
+  </div>
+</a>
 
-  <div class="col-md-4 w3-hover-shadow">
-  <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;">
+  <a href="charitiesinfo.php">
+  <div class="col-md-3">
+  <div class="polaroid">
+  <img src="images/climate.jpg" style="width:100%;">
         <h4>
         	<?php
         		$charity=mysqli_fetch_assoc($charity_name);
@@ -86,9 +93,13 @@ $charity=mysqli_fetch_assoc($charity_name);
         	?>
         </h4>
   </div>
+  </div>
+</a>
  
-  <div class="col-md-4 w3-hover-shadow">
-  <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;">
+  <a href="charitiesinfo.php">
+  <div class="col-md-3">
+  <div class="polaroid">
+  <img src="images/climate.jpg" style="width:100%;">
         <h4>
         	<?php
         		$charity=mysqli_fetch_assoc($charity_name);
@@ -96,9 +107,24 @@ $charity=mysqli_fetch_assoc($charity_name);
         	?>
         </h4>
   </div>
+  </div>
+</a>
+<a href="charitiesinfo.php">
+  <div class="col-md-3">
+  <div class="polaroid">
+  <img src="images/climate.jpg" style="width:100%;">
+        <h4>
+        	<?php
+        		$charity=mysqli_fetch_assoc($charity_name);
+        		echo $name["charity_name"];
+        	?>
+        </h4>
+  </div>
+  </div>
+</a>
   </div>
   <div class="clearfix"></div>
-  <a href="charities.php" class="w3-btn-floating-large w3-tooltip" style="background-color: #FC8213;float: right;"><i class="fa fa-mail-forward"></i></a>
+  <a href="charities.php" class="hvr-icon-wobble-horizontal" style="float: right;padding: 2% 4%;color:#FC8213 ">More</a>
 </div>
 <!--inner block end here-->
 <!--copy rights start here-->
@@ -106,4 +132,3 @@ $charity=mysqli_fetch_assoc($charity_name);
 	 <p> Design by  <a href="#" target="_blank">.....</a> </p>
 </div>	
 
-   
