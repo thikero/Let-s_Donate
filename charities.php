@@ -1,4 +1,4 @@
-<?php 
+<?php
   require_once('menu.php') ;
   require_once('connect.php');
 ?>
@@ -10,14 +10,13 @@
 <div class="row" style="position: relative;">
 <!--get data from database-->
 <?php
-//$query="select charity_id,charity_name,charity_photo from charity";
-$query="select * from test";
+$query="select charity_id,charity_name,charity_photo from charity";
 $charity_data=mysqli_query($connect,$query);
 
 //rows
 $row_amount=mysqli_num_rows($charity_data);
 for($num=0;$num<$row_amount;$num++) {
-    
+
     //columns
     for($column=0;$column<4;$column++)
     {
@@ -26,11 +25,11 @@ for($num=0;$num<$row_amount;$num++) {
          break;
         }
       echo'
-      <a href="charitiesinfo.php"?charity_id='.$result["id"]/*$result["charity_id"]*/.'>
+      <a href="charitiesinfo.php?id='.$result["charity_id"].'">
         <div class="col-md-3" style="border-radius: 10px;box-shadow: 10px">
           <div class="polaroid">
-            <img src="images/climate.jpg"'./*$result["charity_photo"]*/.' style="width:100%;" class="shadow-lg p-3 mb-5 bg-white rounded">
-              <h4>'.$column.$result['name']/*$result['charity_name']*/.'</h4>
+            <img src=".$result["charity_photo"]." style="width:100%;" class="shadow-lg p-3 mb-5 bg-white rounded">
+              <h4>'.$result['charity_name'].'</h4>
           </div>
         </div>
       </a>
@@ -47,4 +46,4 @@ for($num=0;$num<$row_amount;$num++) {
 <!--copy rights start here-->
 <div class="copyrights">
 	 <p> Design by  <a href="#" target="_blank">.....</a> </p>
-</div>	
+</div>

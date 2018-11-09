@@ -8,7 +8,7 @@
 			<div class="col-md-4 market-update-gd">
 				<div class="market-update-block clr-block-1">
 					<div class="col-md-8 market-update-left">
-				
+
 						<h4>Blood Bank</h4>
 						<p>More Infomation</p>
 					</div>
@@ -23,7 +23,7 @@
 			<div class="col-md-4 market-update-gd">
 				<div class="market-update-block clr-block-2">
 				 <div class="col-md-8 market-update-left">
-					
+
 					<h4>Eye Bank</h4>
 					<p>More Infomation</p>
 				  </div>
@@ -38,7 +38,7 @@
 			<div class="col-md-4 market-update-gd">
 				<div class="market-update-block clr-block-3">
 					<div class="col-md-8 market-update-left">
-						
+
 						<h4>Body Part</h4>
 						<p>More Infomation</p>
 					</div>
@@ -54,14 +54,15 @@
 <!--market updates end here-->
 <!--get data from database-->
 <?php
-$query="select charity_name from charity";
+/*$query="select charity_name from charity";*/
 try{
-$charity_name=mysqli_query($connect,$query);	
+$charity_name=mysqli_query($connect,$query);
 }
 catch(Exception $e)
 {
 	echo $e;
 }
+<<<<<<< HEAD
 $charity=mysqli_fetch_assoc($charity_name);
 ?>
 
@@ -86,12 +87,17 @@ $charity=mysqli_fetch_assoc($charity_name);
   <div class="col-md-3">
   <div class="polaroid">
   <img src="images/climate.jpg" style="width:100%;">
+=======
+foreach (mysqli_fetch_assoc($charity_name) as $name) {
+	echo'
+	<div class="col-md-4 w3-hover-shadow">
+  <img src="images/climate.jpg" style="border-radius: 10px;width: 300px;height: 200px;margin-top: 10px;margin-left: 10px;">
+>>>>>>> signup,afd and charities,charitiesinfo
         <h4>
-        	<?php
-        		$charity=mysqli_fetch_assoc($charity_name);
-        		echo $name["charity_name"];
-        	?>
+          		$charity=mysqli_fetch_assoc($charity_name);
+        		'.$name["charity_name"].'
         </h4>
+<<<<<<< HEAD
   </div>
   </div>
 </a>
@@ -120,6 +126,11 @@ $charity=mysqli_fetch_assoc($charity_name);
         	?>
         </h4>
   </div>
+=======
+  </div>';
+}
+?>
+>>>>>>> signup,afd and charities,charitiesinfo
   </div>
 </a>
   </div>
@@ -130,5 +141,9 @@ $charity=mysqli_fetch_assoc($charity_name);
 <!--copy rights start here-->
 <div class="copyrights">
 	 <p> Design by  <a href="#" target="_blank">.....</a> </p>
+<<<<<<< HEAD
 </div>	
 
+=======
+</div>
+>>>>>>> signup,afd and charities,charitiesinfo

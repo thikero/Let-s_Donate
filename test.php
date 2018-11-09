@@ -1,21 +1,20 @@
-
 <?php
   require('menu.php');
   require('connect.php');
   if(isset($_GET['selected_index']))
   {
-    $vi=$_GET['selected_index'];
+    $view_index=$_GET['selected_index'];
   }
 ?>
 <!--inner block start here-->
-<body onload="csi()">
+<body onload="change_selected_index()">
 <div class="inner-block">
     <h2>Posts</h2>
     <div class="row">
     <div class="col-md-8">
     	 <p style="padding: 2% 0%">View by
          <!-- view_by() is at the end of the inner block. -->
-<select name="view_by" id="view_by" onchange="view_by_function()">
+<select name="view_by" id="view_by" onchange="view_by()">
   <option value="all">All</option>
   <option value="blood">Blood</option>
   <option value="liver">Liver</option>
@@ -107,13 +106,9 @@ window.onclick = function(event) {
     if(isset($_GET['view_by']))
     {
       $view_by=$_GET['view_by'];
-        if($view_by!=all)
+        if($view_by!='all')
         {
             $query="select * from posts where post_type='".$view_by."';";
-        }
-        else
-        {
-            $query="select * from posts;";
         }
     }
     else
@@ -121,6 +116,7 @@ window.onclick = function(event) {
         $query="select * from posts;";
     }
     $fetch=mysqli_query($connect,$query);
+    $result=mysqli_fetch_assoc($fetch);
 
     while($result=mysqli_fetch_assoc($fetch) )
     {
@@ -128,10 +124,10 @@ window.onclick = function(event) {
       $op_query="select * from user where user_id=".$op_id.";";
       $op_fetch=mysqli_query($connect,$op_query);
       $op_result=mysqli_fetch_assoc($op_fetch);
-    ?>
+      ?>
       <div class="row"  style="margin-top:5em">
           <div class="malorm-bottom" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);width: 80%">
-            <img src="<?php echo $op_result['user_photo'];?>" class="malorum-pro"/>
+            <img src="<?php echo $op_fetch['user_photo'];?>" class="malorum-pro"/>
 
              <h4 style="margin-left: 6.5em">Melorum</h4> <span><?php echo $result['post_time']; ?></span>
             <p style="margin-left: 0% !important">
@@ -188,41 +184,40 @@ window.onclick = function(event) {
     </div>
     </div>
     <hr>
-    <script type="text/javascript">
-
-    //set view by results to php to get data from database
-    function view_by_function()
-    {
-      var ViewBy=document.getElementById('view_by').value;
-      var s_index=document.getElementById('view_by').options.selectedIndex;
-      window.location.href="afd.php?selected_index="+s_index+"&view_by="+ViewBy;
-    }
-    //this function is not working.Still working on it.
-    function phone_number()
-    {
-      var phone_number=document.getElementById("phone_number").value;
-      if(phone_number.match(/^\d{11}$/))
-        {
-          document.getElementById("ph_error").style.display="none";
-        }
-        else {
-
-            document.getElementById("ph_error").style.display="block";
-            phone_number="";
-        }
-    }
-    //change the selected index of view by
-    function csi()
-    {
-      var vt=<?php echo $vi; ?> ;
-      var si=parseInt(vt);
-      document.getElementById('view_by').options.selectedIndex=si;
-    }
-    </script>
 </div>
 </div>
 </div>
 </div>
 
 <!--inner block end here-->
+<script type="text/javascript">
+//change the selected index of view_by.
+function change_selected_index()
+{
+  var vt=<?php echo $view_index; ?> ;
+  var view_index=parseInt(vt);
+  document.getElementById('view_by').options.selectedIndex=view_index;
+}
+//set view by results to php to get data from database.
+function view_by()
+{
+  var view_by=document.getElementById('view_by').value;
+  var selected_index=document.getElementById('view_by').options.selectedIndex;
+  window.location.href="afd.php?selected_index="+selected_index+"&view_by="+view_by;
+}
+//this function is not working.Still working on it.
+function phone_number()
+{
+  var phone_number=document.getElementById("phone_number").value;
+  if(phone_number.match(/^\d{11}$/))
+    {
+      document.getElementById("ph_error").style.display="none";
+    }
+    else {
+
+        document.getElementById("ph_error").style.display="block";
+        phone_number="";
+    }
+}
+</script>
 </body>

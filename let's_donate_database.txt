@@ -12,7 +12,7 @@ primary key(bank_id)
 );
 
 create table user(
-user_id int(11) not null auto_incrment,
+user_id int(11) not null auto_increment,
 user_name varchar(30) not null,
 user_email varchar(25) not null,
 user_password varchar(30) not null,
@@ -28,7 +28,7 @@ create table charity(
 charity_id int(10) not null auto_increment,
 charity_phone_no int(20) not null,
 charity_name varchar(50) not null,
-charity discription text,
+charity_discription text,
 charity_address varchar(70) not null,
 charity_facebook varchar(100),
 charity_photo blob,
@@ -41,8 +41,8 @@ post_type varchar(20) not null,
 post_blood_type varchar(15) not null,
 user_id int(20) not null,
 post_phone_number int(15) not null,
-post_emain varchar(30) not null,
+post_email varchar(30) not null,
 post_description text,
-primary key(post_id)
+primary key(post_id),
 foreign key(user_id) references user(user_id)
 );
