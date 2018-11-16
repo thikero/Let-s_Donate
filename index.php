@@ -1,6 +1,14 @@
 
-<?php require_once('menu.php') ?>
-<?php require_once('connect.php') ?>
+<?php session_start();
+if(isset($_SESSION['email'])){
+    require('menusignin.php');
+    }
+    else{
+        require('menu.php');
+        }
+ require_once('connect.php') 
+
+?>
 
 <div class="inner-block ">
 <!--market updates updates-->
@@ -9,7 +17,7 @@
 			<div class="col-md-4 market-update-gd">
 				<div class="market-update-block clr-block-1">
 					<div class="col-md-8 market-update-left">
-
+				
 						<h4>Blood Bank</h4>
 						<p>More Infomation</p>
 					</div>
@@ -24,7 +32,7 @@
 			<div class="col-md-4 market-update-gd">
 				<div class="market-update-block clr-block-2">
 				 <div class="col-md-8 market-update-left">
-
+					
 					<h4>Eye Bank</h4>
 					<p>More Infomation</p>
 				  </div>
@@ -39,7 +47,7 @@
 			<div class="col-md-4 market-update-gd">
 				<div class="market-update-block clr-block-3">
 					<div class="col-md-8 market-update-left">
-
+						
 						<h4>Body Part</h4>
 						<p>More Infomation</p>
 					</div>
@@ -55,9 +63,9 @@
 <!--market updates end here-->
 <!--get data from database-->
 <?php
-$query="select * from charity";
+$query="select charity_name from charity";
 try{
-$charity_name=mysqli_query($connect,$query);
+$charity_name=mysqli_query($connect,$query);	
 }
 catch(Exception $e)
 {
@@ -69,26 +77,13 @@ $charity=mysqli_fetch_assoc($charity_name);
 <h3 style="margin: 20px;color:#FC8213 ">Charities</h3>
 
 <div class="row" style="position: relative;">
-<a href="charitiesinfo.php?id=<?php echo $charity['charity_id']; ?>">
+<a href="charitiesinfo.php">
   <div class="col-md-3">
   <div class="polaroid">
-  <img src="<?php echo $charity['charity_photo']; ?>" style="width:100%;">
+  <img src="images/climate.jpg" style="width:100%;"><!--<?php/*echo $charity["photo"]*/ ?>-->
         <h4>
         	<?php
-
-        		echo $charity["charity_name"];
-        	?>
-        </h4>
-  </div>
-  </div>
-</a>
-	<?php $charity=mysqli_fetch_assoc($charity_name); ?>
-  <a href="charitiesinfo.php?id=<?php echo $charity['charity_id']; ?>">
-  <div class="col-md-3">
-  <div class="polaroid">
-  <img src="<?php echo $charity['charity_photo']; ?>" style="width:100%;">
-        <h4>
-        	<?php
+        		
         		echo $name["charity_name"];
         	?>
         </h4>
@@ -96,27 +91,41 @@ $charity=mysqli_fetch_assoc($charity_name);
   </div>
 </a>
 
-<?php $charity=mysqli_fetch_assoc($charity_name); ?>
-<a href="charitiesinfo.php?id=<?php echo $charity['charity_id']; ?>">
+  <a href="charitiesinfo.php">
   <div class="col-md-3">
   <div class="polaroid">
-  <img src="<?php echo $charity['charity_photo']; ?>" style="width:100%;">
+  <img src="images/climate.jpg" style="width:100%;">
         <h4>
         	<?php
-        		echo $charity["charity_name"];
+        		$charity=mysqli_fetch_assoc($charity_name);
+        		echo $name["charity_name"];
         	?>
         </h4>
   </div>
   </div>
 </a>
-<?php $charity=mysqli_fetch_assoc($charity_name); ?>
-<a href="charitiesinfo.php?id=<?php echo $charity['charity_id']; ?>">
+ 
+  <a href="charitiesinfo.php">
   <div class="col-md-3">
   <div class="polaroid">
-  <img src="<?php echo $charity['charity_photo']; ?>" style="width:100%;">
+  <img src="images/climate.jpg" style="width:100%;">
         <h4>
         	<?php
-        		echo $charity["charity_name"];
+        		$charity=mysqli_fetch_assoc($charity_name);
+        		echo $name["charity_name"];
+        	?>
+        </h4>
+  </div>
+  </div>
+</a>
+<a href="charitiesinfo.php">
+  <div class="col-md-3">
+  <div class="polaroid">
+  <img src="images/climate.jpg" style="width:100%;">
+        <h4>
+        	<?php
+        		$charity=mysqli_fetch_assoc($charity_name);
+        		echo $name["charity_name"];
         	?>
         </h4>
   </div>
@@ -130,4 +139,4 @@ $charity=mysqli_fetch_assoc($charity_name);
 <!--copy rights start here-->
 <div class="copyrights">
 	 <p> Design by  <a href="#" target="_blank">.....</a> </p>
-</div>
+</div>	

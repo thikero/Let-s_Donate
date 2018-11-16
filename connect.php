@@ -1,16 +1,16 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database="donation";
+<?Php
+/////// Update your database login details here /////
+$dbhost_name = "localhost"; // Your host name 
+$database = "donatioin1";       // Your database name
+$username = "root";            // Your login userid 
+$password = "";            // Your password 
+//////// End of database details of your server //////
 
-// Create connection
-$connect= mysqli_connect($servername, $username, $password,$database);
-
-// Check connection
-if (!$connect) {
-    die("Connection failed: " . mysqli_connect_error());
+//////// Do not Edit below /////////
+try {
+$conn = new PDO('mysql:host='.$dbhost_name.';dbname='.$database, $username, $password);
+} catch (PDOException $e) {
+print "Error!: " . $e->getMessage() . "<br/>";
+die();
 }
-echo "connected successfully!";
-
-?>
+?> 

@@ -1,4 +1,10 @@
-<?php require('menu.php') ?>
+<?php session_start();
+if(isset($_SESSION['email'])){
+    require('menusignin.php');
+    }
+    else{
+        require('menu.php');
+        }?>
 <div class="inner-block">
 <h2>Body Part</h2>
   <p style="padding: 2% 0%">Location: 
@@ -7,13 +13,12 @@
   <option value="saab">Manadalay</option>
 </select> 
 </p>
- <div class="clearfix"></div>
- <div class="container">
+ 
  <div class="row" style="position: relative;max-width: 100%;width: 100%;">
  <div class="col-md-3" style="border-radius: 10px;margin-top: 5% ">
  <img src="images\bps.jpg" height="200" width="200"/>
 </div>
- <div class="col-md-8 d-inline bg-success" style="border-radius: 10px;padding: 5% 8%">
+ <div class="col-md-9 d-inline bg-success" style="border-radius: 10px;padding: 5% 7%">
  
    			<p style="padding: 2% 0%;"><spam style="color:#FC8213">Name:</spam> biuhij oijoijoojiohijoijijoij jioijoibiuhijoi joijoojiohijoijijoi jjioijoi</p>
    			<p style="padding: 2% 0%;"><spam style="color:#FC8213">Description</spam>: biuhi joijoijooji ohijoijijoijjio ijoibiuhijoijoijo oji ohijoijijoi jjioij oibiuhij oijo ijoojiohijoij ijoijjioijoibiuhijo ijoijooj i ohijoijijoijj ioijoibiuhijoijoijoojiohij oijijoijjioijoibiuhijoijoijoojiohi joijijoijj ioijoibiuhijoijoijooj iohijoijijoijjioijoi</p>
@@ -24,7 +29,9 @@
    	 </div>
      </div>
    </div>
+
+<div class="copyrights">
+   <p> Design by  <a href="#" target="_blank">.....</a> </p>
 </div>
 
-</div>
 

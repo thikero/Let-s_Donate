@@ -18,8 +18,6 @@
 <link rel="stylesheet" type="text/css" href="css/w3css.css">
 <link href="css/hovers.css" rel="stylesheet" media="all">
 <link href="css/demo-page.css" rel="stylesheet" media="all">
-
-
 <!--static chart-->
 
 
@@ -72,7 +70,7 @@
 
 <!--slider menu-->
     <div class="sidebar-menu" style="position: fixed;" >
-		  	<div class="logo"> <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo" ></span> 
+		  	<div class="logo"> <a href="#" class="sidebar-icon" style="background-color:maroon; "> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo" ></span> 
 			      <!--<img id="logo" src="" alt="Logo"/>--> 
 			  </a> </div>		  
 		    <div class="menu">
@@ -80,8 +78,8 @@
 		        <li id="menu-home" ><a href="signin.php"><i class="fa fa-sign-in"></i><span>Sign in</span></a></li>
 		        <li id="menu-home" ><a href="signup.php"><i class="fa fa-pencil"></i><span>Sign Up</span></a></li>
 		        <li id="menu-home" ><a href="charities.php"><i class="fa fa-users"></i><span>Charities</span></a></li>
-		        <li id="menu-home" ><a href="index.php"><i class="fa fa-paper-plane-o"></i><span>Ask for donation</span></a></li>
-		          <li id="menu-home" ><a href="index.php"><i class="fa fa-tty"></i><span>Contact Us</span></a></li>
+		        <li id="menu-home" ><a href="afd.php"><i class="fa fa-paper-plane-o"></i><span>Ask for donation</span></a></li>
+		          <li id="menu-home" ><a href="contact1.php"><i class="fa fa-tty"></i><span>Contact Us</span></a></li>
 		      </ul>
 		    </div>
 	 </div>
