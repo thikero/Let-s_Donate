@@ -6,6 +6,9 @@
   {
     $vi=$_GET['selected_index'];
   }
+  else {
+      $vi=0;
+  }
 ?>
 <!--inner block start here-->
 <body onload="csi()">
@@ -15,7 +18,7 @@
     <div class="col-md-8">
     	 <p style="padding: 2% 0%">View by
          <!-- view_by() is at the end of the inner block. -->
-<select name="view_by" id="view_by" onchange="view_by_function()">
+<select name="view_by" id="view_by" onchange="viewby_function()">
   <option value="all">All</option>
   <option value="blood">Blood</option>
   <option value="liver">Liver</option>
@@ -109,16 +112,16 @@ window.onclick = function(event) {
       $view_by=$_GET['view_by'];
         if($view_by!=all)
         {
-            $query="select * from posts where post_type='".$view_by."';";
+            $query="select * from post where post_type='".$view_by."';";
         }
         else
         {
-            $query="select * from posts;";
+            $query="select * from post;";
         }
     }
     else
     {
-        $query="select * from posts;";
+        $query="select * from post;";
     }
     $fetch=mysqli_query($connect,$query);
 
@@ -191,11 +194,11 @@ window.onclick = function(event) {
     <script type="text/javascript">
 
     //set view by results to php to get data from database
-    function view_by_function()
+    function viewby_function()
     {
-      var ViewBy=document.getElementById('view_by').value;
+      var V_By=document.getElementById('view_by').value;
       var s_index=document.getElementById('view_by').options.selectedIndex;
-      window.location.href="afd.php?selected_index="+s_index+"&view_by="+ViewBy;
+      window.location.href="afd.php?selected_index="+s_index+"&view_by="+V_By;
     }
     //this function is not working.Still working on it.
     function phone_number()
