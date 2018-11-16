@@ -1,4 +1,9 @@
-
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0;}
@@ -145,6 +150,7 @@ a:hover {
   width: 65px;
   transition: all 100ms ease-in-out;
   transition-delay: 300ms;
+  background-color: #FC8213;
 }
 
 .page-container.sidebar-collapsed-back .sidebar-menu {
@@ -1810,19 +1816,21 @@ p.grid1 {
     background: #FFFFFF;
     background-size: cover;
     min-height: 400px;
-    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
+    box-shadow: 10px 10px 10px 10px  rgba(0,0,0,0.15);
 }
 .login-page {
     padding: 6.5em 0em;
 }
-.login-head {
-    background: url(../images/login.jpg)no-repeat;
+.login-head  {
+    background: url(../images/donationimg3.jpg)no-repeat center ;
     background-size: cover;
     min-height: 150px;
+
 }
+
 .login-head h1 {
     font-size:3em;
-     color:#FFF;
+     color:#000;
     padding: 1em 0em 0em 0em;
     text-align: center;
     font-family: 'Carrois Gothic', sans-serif;
@@ -1830,7 +1838,7 @@ p.grid1 {
 .login-block {
     padding: 4em 2em;
 }
-.login-block input[type="text"], .login-block input[type="password"] {
+.login-block input[type="text"], .login-block input[type="password"],login-block input[type="email"] {
     font-size: 0.9em;
     padding: 10px 20px;
     width: 100%;
@@ -1849,7 +1857,7 @@ p.grid1 {
     outline: none;
     cursor: pointer;
     color: #fff;
-    background: #337AB7;
+    background: #FC8213;
     width: 100%;
     margin: 0 auto;
     border-radius: 3px;
@@ -1859,7 +1867,7 @@ p.grid1 {
     font-family: 'Carrois Gothic', sans-serif;
 }
 .login-block input[type="submit"]:hover{
-  background:#FC8213;
+  background:#f30;
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
@@ -1944,10 +1952,10 @@ p.grid1 {
     list-style: none;
     display: inline-block;
 }
-.forgot-grid ul li input[type="checkbox"] {
+.forgot-grid ul li input[type="radio"] {
     display: none;
 }
-.forgot-grid ul li input[type="checkbox"]+label {
+.forgot-grid ul li input[type="radio"]+label {
     position: relative;
     padding-left: 31px;
     color: #FC8213;
@@ -1957,7 +1965,7 @@ p.grid1 {
     font-weight: 600;
     text-transform: uppercase;
 }
-.forgot-grid ul li input[type="checkbox"]+label span:first-child {
+.forgot-grid ul li input[type="radio"]+label span:first-child {
     width: 17px;
     height: 17px;
     display: inline-block;
@@ -1966,7 +1974,7 @@ p.grid1 {
     left: 0;
     bottom: 4px;
 }
-.forgot-grid ul li input[type="checkbox"]:checked+label span:first-child:before {
+.forgot-grid ul li input[type="radio"]:checked+label span:first-child:before {
     content: "";
     background:url(../images/tick.png)no-repeat 1px -1px;
     position: absolute;
@@ -2006,24 +2014,25 @@ p.grid1 {
 /*--login page end here--*/
 /*--signup page start here--*/
 .signup-page-main {
-    padding: 9em 0em;
+    padding: 5em 0em;
 }
 .signup-main {
-    width: 40%;
+  z-index: 2;    width: 40%;
     margin: 0 auto;
-    background: #FFFFFF;
+    background-color: #fff;
     background-size: cover;
     min-height: 400px;
-    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.15);
+   
 }
 .signup-head {
-    background: url(../images/login.jpg)no-repeat;
+background: url(../images/donationimg3.jpg)no-repeat center ;
     background-size: cover;
     min-height: 150px;
 }
 .signup-head h1 {
     font-size:3em;
-    color:#FFF;
+    color:#000;
     padding: 1em 0em 0em 0em;
     text-align: center;
     font-family: 'Carrois Gothic', sans-serif;
@@ -2031,7 +2040,7 @@ p.grid1 {
 .signup-block {
     padding: 4em 2em;
 }
-.signup-block input[type="text"], .signup-block input[type="password"],.signup-block input[type="tel"]{
+.signup-block input[type="text"], .signup-block input[type="password"],.signup-block input[type="tel"],.signup-block input[type="email"]{
     font-size: 0.9em;
     padding: 10px 20px;
     width: 100%;
@@ -2050,7 +2059,7 @@ p.grid1 {
     outline: none;
     cursor: pointer;
     color: #fff;
-    background: #337AB7;
+    background: #FC8213;
     width: 100%;
     margin: 0 auto;
     border-radius: 3px;
@@ -2060,7 +2069,7 @@ p.grid1 {
     font-family: 'Carrois Gothic', sans-serif;
 }
 .signup-block input[type="submit"]:hover{
-  background:#FC8213;
+  background:#f30;
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
@@ -3940,6 +3949,7 @@ canvas#pie {
     float: none;
     width: 100%;
     margin-bottom: 0.4em;
+    background-color: #99f
 } 
 .search-box {
     margin-top: 0em;
@@ -3947,6 +3957,7 @@ canvas#pie {
 .header-right {
     float: none;
     width: 100%;
+    background: #000;
 }
 .logo-name h1 {
     font-size: 1.9em;
